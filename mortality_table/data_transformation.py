@@ -1,7 +1,8 @@
+import pandas
+import numpy
+import xlrd
+
 def data_transformation(tables):
-    import pandas
-    import numpy
-    import xlrd
     names = tables.sheet_names()
     tables_new = pandas.DataFrame()
     for i in range(len(names)):

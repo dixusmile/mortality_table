@@ -1,0 +1,8 @@
+setup.py
+mortality_table/__init__.py
+mortality_table/data_transformation.py
+mortality_table.egg-info/PKG-INFO
+mortality_table.egg-info/SOURCES.txt
+mortality_table.egg-info/dependency_links.txt
+mortality_table.egg-info/requires.txt
+mortality_table.egg-info/top_level.txt
