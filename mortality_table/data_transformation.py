@@ -1,6 +1,5 @@
 import pandas
 import numpy
-import xlrd
 
 def data_transformation(tables):
     names = tables.sheet_names()
