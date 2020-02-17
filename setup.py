@@ -1,7 +1,4 @@
 from setuptools import setup
-import numpy
-import pandas
-import xlrd
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
