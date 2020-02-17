@@ -1,8 +1,8 @@
 def data_transformation(tables):
     names = tables.sheet_names()
-    tables_new = pd.DataFrame()
+    tables_new = pandas.DataFrame()
     for i in range(len(names)):
-        table = pd.read_excel(tables, sheet_name=i, skiprows=2)
+        table = pandas.read_excel(tables, sheet_name=i, skiprows=2)
         name = names[i]
         age_basis = name[9:12]
         if name[5:6] == "M":
@@ -13,14 +13,14 @@ def data_transformation(tables):
             tobacco_status = "Tobacco"
         else:
             tobacco_status = "Nontobacco"
-        table_new_all = pd.DataFrame()
+        table_new_all = pandas.DataFrame()
         for j in range(table['Iss. Age'].min(), table['Iss. Age'].max() + 1):
             insure_age = j
-            duration = pd.DataFrame({'duration': range(1, 120 + 2 - insure_age)})
-            mortality_rate = np.concatenate((table.loc[table['Iss. Age'] == insure_age].iloc[:, 1:26].T.values,
+            duration = pandas.DataFrame({'duration': range(1, 120 + 2 - insure_age)})
+            mortality_rate = numpy.concatenate((table.loc[table['Iss. Age'] == insure_age].iloc[:, 1:26].T.values,
                                              table.loc[table['Iss. Age'] >= insure_age, ["Ult."]].values))
-            mortality_rate = pd.DataFrame({'mortality_rate': mortality_rate[:, 0]})
-            table_new = pd.concat([duration, mortality_rate], axis=1)
+            mortality_rate = pandas.DataFrame({'mortality_rate': mortality_rate[:, 0]})
+            table_new = pandas.concat([duration, mortality_rate], axis=1)
             table_new['insure_age'] = insure_age
             table_new['tobacco_status'] = tobacco_status
             table_new['gender'] = gender
