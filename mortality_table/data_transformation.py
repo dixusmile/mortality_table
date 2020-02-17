@@ -1,6 +1,5 @@
-import pandas
 import numpy
-
+import pandas
 def data_transformation(tables):
     names = tables.sheet_names()
     tables_new = pandas.DataFrame()
