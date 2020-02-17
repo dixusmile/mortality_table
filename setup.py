@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
@@ -7,7 +7,7 @@ setup(
     author='Di Xu',
     author_email='di.xu@unl.edu',
     # Needed to actually package something
-    packages=['mortality_table'],
+    packages=find_packages(exclude=['tests*']),
     # Needed for dependencies
     install_requires=['numpy', 'pandas', 'xlrd'],
     # *strongly* suggested for sharing
